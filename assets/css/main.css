@@ -580,13 +580,13 @@ section,
 
 .hero h2 {
   margin: 0;
-  font-size: 64px;
+  font-size: 80px;
   font-weight: 700;
 }
 
 .hero p {
   margin: 5px 0 0 0;
-  font-size: 26px;
+  font-size: 40px;
 }
 
 .hero p span {
@@ -613,11 +613,11 @@ section,
 
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 32px;
+    font-size: 55px;
   }
 
   .hero p {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
@@ -1396,4 +1396,27 @@ section,
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 10px;
+}
+.scroll-down {
+  position: absolute;
+  top: 200%; /* Position at the bottom of the hero section */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: pulse 1.5s infinite; /* Add pulsing effect */
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1); /* Slightly grow */
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.scroll-link {
+  text-decoration: none; /* Remove underline from the link */
 }

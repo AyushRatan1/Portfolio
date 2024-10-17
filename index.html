@@ -50,66 +50,56 @@
   <body class="index-page">
     <header id="header" class="header dark-background d-flex flex-column">
       <i class="header-toggle d-xl-none bi bi-list"></i>
-
+    
       <div class="profile-img">
-        <img
-          src="assets/img/my-profile-img.png"
-          alt=""
-          class="img-fluid rounded-circle"
-        />
+        <img src="assets/img/my-profile-img.png" alt="" class="img-fluid rounded-circle" />
       </div>
-
-      <a
-        href="index.html"
-        class="logo d-flex align-items-center justify-content-center"
-      >
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+    
+      <a href="index.html" class="logo d-flex align-items-center justify-content-center">
         <h1 class="sitename">Prabhat Kumar Sinha</h1>
       </a>
-
+    
+      <!-- Social Links at the top of the header -->
       <div class="social-links text-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/prabhat-sinha" class="linkedin" target="_blank">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=example" class="google-scholar" target="_blank">
+          <i class="bi bi-google"></i>
+        </a>
+        <a href="mailto:sinhapk359@gmail.com" class="email" target="_blank">
+          <i class="bi bi-envelope"></i>
+        </a>
       </div>
-
+    
+      <!-- Navigation menu below social links -->
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
-            <a href="#hero" class="active"
-              ><i class="bi bi-house navicon"></i>Home</a
-            >
+            <a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a>
           </li>
           <li>
             <a href="#about"><i class="bi bi-person navicon"></i> About</a>
           </li>
           <li>
-            <a href="#resume"
-              ><i class="bi bi-file-earmark-text navicon"></i> Resume</a
-            >
+            <a href="#work-experience"><i class="bi bi-file-earmark-text navicon"></i> Work Experience</a>
           </li>
           <li>
-            <a href="#portfolio"
-              ><i class="bi bi-images navicon"></i> Portfolio</a
-            >
+            <a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a>
           </li>
           <li>
-            <a href="#services"
-              ><i class="bi bi-hdd-stack navicon"></i> Services</a
-            >
+            <a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a>
           </li>
-         
           <li>
-            <a href="#contact"
-              ><i class="bi bi-envelope navicon"></i> Contact</a
-            >
+            <a href="#recent-works"><i class="bi bi-briefcase navicon"></i> Recent Works</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a>
           </li>
         </ul>
       </nav>
     </header>
+    
 
     <main class="main">
       <!-- Hero Section -->
@@ -128,6 +118,11 @@
               aria-hidden="true"
             ></span>
           </p>
+          <div class="scroll-down">
+            <a href="#about" class="scroll-link">
+              <i class="bi bi-file-arrow-down-fill" style="font-size: 2rem; color: #ffffff;"></i>
+            </a>
+          </div>
         </div>
       </section>
       <!-- /Hero Section -->
@@ -696,75 +691,111 @@
 
 
       
-<section id="recent-works" class="recent-works section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Recent Works</h2>
-    <p>
-      A collection of significant LinkedIn posts and key contributions made by Dr. Prabhat Kumar Sinha, highlighting his insights and expertise in the power sector.
-    </p>
-  </div>
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4">
+      <section id="recent-works" class="recent-works section light-background">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Recent Works</h2>
+          <p>
+            A showcase of Dr. Prabhat Kumar Sinha’s latest contributions, insights, and key industry posts, highlighting his leadership and innovation in the power sector.
+          </p>
+        </div>
       
-      <!-- LinkedIn Post 1 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="post-item shadow-sm p-4 bg-white rounded">
-          <h4>Post Title 1: Power Sector Innovations</h4>
-          <p>
-            In this post, Dr. Sinha discusses recent trends in power sector innovations and the impact of sustainable technologies.
-          </p>
-          <a href="https://www.linkedin.com/post-url-1" target="_blank" class="read-more">View Post on LinkedIn <i class="bi bi-arrow-right"></i></a>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            
+            <!-- LinkedIn Post 1: PowerUp Masterclass -->
+            <div class="col-lg-4 col-md-6">
+              <div class="post-item shadow-sm p-4 bg-white rounded text-center">
+                <div class="post-icon mb-3">
+                  <i class="bi bi-lightning-charge-fill" style="font-size: 2rem; color: #007bff;"></i>
+                </div>
+                <h4>PowerUp Masterclass Series</h4>
+                <p class="text-muted">
+                  Dr. Sinha shares insights on Steam Turbine Distress Signals and Troubleshooting. A must-watch for industry professionals.
+                </p>
+                <a href="https://www.linkedin.com/posts/prabhat-sinha-09303112_know-it-all-about-the-powerup-masterclass-activity-7109432898016935936-qg-_?utm_source=share&utm_medium=member_desktop" target="_blank" class="read-more">
+                  View Post on LinkedIn <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Consulting Project: JP Power Nigri -->
+            <div class="col-lg-4 col-md-6">
+              <div class="post-item shadow-sm p-4 bg-white rounded text-center">
+                <div class="post-icon mb-3">
+                  <i class="bi bi-gear-fill" style="font-size: 2rem; color: #28a745;"></i>
+                </div>
+                <h4>Consulting Project: JP Power Nigri (2x800 MW)</h4>
+                <p class="text-muted">
+                  Dr. Sinha led a project to optimize steam turbine performance at JP Power, Nigri, delivering a 10% efficiency boost.
+                </p>
+              </div>
+            </div>
+      
+            <!-- LinkedIn Post: Leadership in Energy Management -->
+            <div class="col-lg-4 col-md-6">
+              <div class="post-item shadow-sm p-4 bg-white rounded text-center">
+                <div class="post-icon mb-3">
+                  <i class="bi bi-bar-chart-fill" style="font-size: 2rem; color: #ffc107;"></i>
+                </div>
+                <h4>Leadership in Energy Management</h4>
+                <p class="text-muted">
+                  Learn about Dr. Sinha’s approach to improving operational efficiency and leadership in large-scale energy projects.
+                </p>
+                <a href="https://www.linkedin.com/post-url-2" target="_blank" class="read-more">
+                  View Post on LinkedIn <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Research Paper: Enhancing Thermal Power Plant Efficiency -->
+            <div class="col-lg-4 col-md-6">
+              <div class="post-item shadow-sm p-4 bg-white rounded text-center">
+                <div class="post-icon mb-3">
+                  <i class="bi bi-journal-text" style="font-size: 2rem; color: #17a2b8;"></i>
+                </div>
+                <h4>Research Paper: Enhancing Power Plant Efficiency</h4>
+                <p class="text-muted">
+                  This research paper outlines Dr. Sinha’s contributions to enhancing steam turbine performance in aging power plants.
+                </p>
+                <a href="link-to-paper" target="_blank" class="read-more">
+                  View Paper <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Keynote Speech: Energy Transition in India -->
+            <div class="col-lg-4 col-md-6">
+              <div class="post-item shadow-sm p-4 bg-white rounded text-center">
+                <div class="post-icon mb-3">
+                  <i class="bi bi-mic-fill" style="font-size: 2rem; color: #dc3545;"></i>
+                </div>
+                <h4>Keynote: Energy Transition in India</h4>
+                <p class="text-muted">
+                  Dr. Sinha delivered a keynote speech on India's energy transition roadmap and strategies for sustainable development.
+                </p>
+                <a href="link-to-event" target="_blank" class="read-more">
+                  Learn More <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Sustainability Initiative: Ash Management at NTPC -->
+            <div class="col-lg-4 col-md-6">
+              <div class="post-item shadow-sm p-4 bg-white rounded text-center">
+                <div class="post-icon mb-3">
+                  <i class="bi bi-tree-fill" style="font-size: 2rem; color: #6f42c1;"></i>
+                </div>
+                <h4>Sustainability: Ash Management at NTPC</h4>
+                <p class="text-muted">
+                  Dr. Sinha led a sustainability initiative at NTPC, reducing environmental impact by 15% through innovative ash management.
+                </p>
+              </div>
+            </div>
+      
+          </div>
         </div>
-      </div>
-
-      <!-- LinkedIn Post 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="post-item shadow-sm p-4 bg-white rounded">
-          <h4>Post Title 2: Leadership in Energy Management</h4>
-          <p>
-            Dr. Sinha shares insights on leadership practices for improving operational efficiency and team performance in energy projects.
-          </p>
-          <a href="https://www.linkedin.com/post-url-2" target="_blank" class="read-more">View Post on LinkedIn <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- LinkedIn Post 3 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="post-item shadow-sm p-4 bg-white rounded">
-          <h4>Post Title 3: Sustainability in Power Plants</h4>
-          <p>
-            This post highlights Dr. Sinha's contributions to environmental sustainability and ash management in thermal power plants.
-          </p>
-          <a href="https://www.linkedin.com/post-url-3" target="_blank" class="read-more">View Post on LinkedIn <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- LinkedIn Post 4 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="post-item shadow-sm p-4 bg-white rounded">
-          <h4>Post Title 4: Strategic Management in Energy</h4>
-          <p>
-            Dr. Sinha discusses strategic management practices for large-scale energy projects, focusing on improving performance and sustainability.
-          </p>
-          <a href="https://www.linkedin.com/post-url-4" target="_blank" class="read-more">View Post on LinkedIn <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- LinkedIn Post 5 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="post-item shadow-sm p-4 bg-white rounded">
-          <h4>Post Title 5: Innovations in Steam Turbines</h4>
-          <p>
-            In this post, Dr. Sinha elaborates on steam turbine upgrades and performance assessments that have led to efficiency improvements.
-          </p>
-          <a href="https://www.linkedin.com/post-url-5" target="_blank" class="read-more">View Post on LinkedIn <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
+      
 
 
 
@@ -874,12 +905,11 @@
         <div class="container section-title" data-aos="fade-up">
           <h2>Contact</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Please feel free to reach out for any inquiries or discussions.
           </p>
         </div>
         <!-- End Section Title -->
-
+      
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4">
             <div class="col-lg-5">
@@ -892,7 +922,7 @@
                   </div>
                 </div>
                 <!-- End Info Item -->
-        
+                
                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-telephone flex-shrink-0"></i>
                   <div>
@@ -901,7 +931,7 @@
                   </div>
                 </div>
                 <!-- End Info Item -->
-        
+                
                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                   <i class="bi bi-envelope flex-shrink-0"></i>
                   <div>
@@ -910,7 +940,7 @@
                   </div>
                 </div>
                 <!-- End Info Item -->
-        
+                
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14119.938330297397!2d77.344428!3d28.535516!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce54420792f95%3A0x238edf5ec226f8c9!2sNoida%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1697132301176!5m2!1sen!2sus"
                   frameborder="0"
@@ -921,7 +951,7 @@
                 ></iframe>
               </div>
             </div>
-        
+      
             <div class="col-lg-7">
               <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
@@ -929,32 +959,36 @@
                     <label for="name-field" class="pb-2">Your Name</label>
                     <input type="text" name="name" id="name-field" class="form-control" required="" />
                   </div>
-        
+      
                   <div class="col-md-6">
                     <label for="email-field" class="pb-2">Your Email</label>
                     <input type="email" class="form-control" name="email" id="email-field" required="" />
                   </div>
-        
+      
                   <div class="col-md-12">
                     <label for="subject-field" class="pb-2">Subject</label>
                     <input type="text" class="form-control" name="subject" id="subject-field" required="" />
                   </div>
-        
+      
                   <div class="col-md-12">
                     <label for="message-field" class="pb-2">Message</label>
                     <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
                   </div>
-        
+      
                   <div class="col-md-12 text-center">
                     <div class="loading">Loading</div>
                     <div class="error-message"></div>
                     <div class="sent-message">Your message has been sent. Thank you!</div>
-        
+      
                     <button type="submit">Send Message</button>
                   </div>
                 </div>
               </form>
             </div>
+          </div>
+        </div>
+      </section>
+      
             <!-- End Contact Form -->
           </div>
         </div>
