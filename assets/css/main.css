@@ -1434,7 +1434,6 @@ section,
 .companies-carousel-wrapper {
   display: flex;
   align-items: center;
-  overflow: hidden;
 }
 
 .companies-carousel {
@@ -1444,14 +1443,14 @@ section,
 }
 
 .companies-carousel-item img {
-  max-height: 100px;
+  max-height: 200px;
   max-width: 150px;
-  gap: 50px;
-  transition: transform 0.3s ease;
+  gap: 30px;
+  transition: transform 0.5s ease;
 }
 
 .companies-carousel-item img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 @keyframes scroll-companies {
@@ -1466,7 +1465,7 @@ section,
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .companies-carousel-item img {
-    max-height: 60px;
+    max-height: 180px;
     max-width: 120px;
   }
 }
