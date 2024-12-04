@@ -104,10 +104,18 @@
     
 
     <main class="main">
-      <section id="hero" class="hero section dark-background">
-        <img src="assets/img/IMG.png" alt="Background" class="hero-background" />
-        
-        <div class="container text-center">
+      <section id="hero" class="hero-section dark-background">
+        <div class="hero-carousel-container">
+          
+          <img src="assets/img/5.jpg" alt="Image 1" class="hero-carousel-image" />
+          <img src="assets/img/IMG.png" alt="Image 1" class="hero-carousel-image" />
+          <img src="assets/img/2.jpg" alt="Image 2" class="hero-carousel-image" />
+          <img src="assets/img/3.jpg" alt="Image 3" class="hero-carousel-image" />
+          <img src="assets/img/4.jpg" alt="Image 4" class="hero-carousel-image" />
+          <img src="assets/img/1.jpg" alt="Image 5" class="hero-carousel-image" />
+        </div>
+    
+        <div class="hero-text-container text-center">
           <h2 class="hero-title" style="font-size: 2.5rem; font-weight: 400; color: #eaeaea;">
             Prabhat Kumar Sinha
           </h2>
@@ -172,55 +180,54 @@
       </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About Prabhat Kumar Sinha</h2>
+   <!-- About Section -->
+<section id="about" class="about section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>About Me</h2>
+  </div>
+  
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-3 justify-content-center align-items-center">
+      <div class="col-lg-4 text-center">
+        <img src="assets/img/my-profile-img.png" class="img-fluid shadow mb-2" alt="Profile Image" />
       </div>
       
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center align-items-center">
-          <div class="col-lg-4 text-center">
-            <img src="assets/img/my-profile-img.png" class="img-fluid shadow" alt="Profile Image" />
+      <div class="col-lg-8 content">
+        <h2 class="fw-bold mb-2">Independent Consultant & Trainer in the Power Sector</h2>
+        <p class="fst-italic text-muted mb-1">As an independent consultant and trainer, I undertake and resolve the challenges arising in competitive power generation, the addition of renewables, cyclic operations, EHS management, and up-skilling of operational teams.</p>
+        <p class="text-muted mb-1">With over 40 years of extensive experience in the power generation sector, I specialize in strategic asset management for operational excellence and sustained growth of organizations in the energy sector and allied industries.</p>
+        <p class="text-muted mb-1">I worked for 36 years at NTPC and its joint ventures NASL/NGSL, where I held diverse leadership roles across project management, operations and maintenance (O&M), renovation and modernization (R&M), and EHS.</p>
+        <p class="text-muted mb-1">Currently, I continue to deliver consultancy and training services to prominent organizations in the energy sector, including NTPC, JP Power, Vedanta Power, and global consultancies like BCG, GLG, KLINE, INSIGHT ALPHA, and Accenture. I am also associated with leading institutes like NTPC-PMI, BIMTECH, and XIME for up-skilling management teams.</p>
+        <p class="text-muted mb-1">My commitment is to enable organizations to achieve operational excellence and sustainable growth through continuous adoption of industry best practices and up-skilling of operational teams.</p>
+        <br>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Me</button>
+      </div>
+    </div>
+    
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Contact Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          
-          <div class="col-lg-8 content">
-            <h2 class="fw-bold">Independent Consultant & Trainer in the Power Sector</h2>
-            <p class="fst-italic py-2 text-muted">With over 40 years of extensive experience in the energy sector, I specialize in strategic asset management, operational excellence, and Environmental Health and Safety (EHS). As an independent consultant and trainer, I collaborate with leading consultancy firms and power utilities to drive performance improvements, develop comprehensive training programs, design effective EHS strategies, and address critical challenges impacting organizational profitability.</p>
-        
-            <p class="py-2 text-muted">During my 36+ years at NTPC and its joint ventures, I held diverse leadership roles across project management, operations and maintenance (O&M), and renovation and modernization (R&M) initiatives. I successfully managed profit centers, executed complex projects, and earned certification as a Safety Auditor. My expertise in troubleshooting, particularly with steam turbines and auxiliary systems, has been pivotal in ensuring seamless operations and efficient overhauls.</p>
-        
-            <p class="py-2 text-muted">Currently, I continue to deliver consultancy and training services to prominent organizations in the energy sector, including NTPC, JP Power, Vedanta Power, and global consultancies like BCG, GLG, KLINE, INSIGHT ALPHA, and Accenture. My commitment is to enable organizations to achieve operational excellence and sustainable growth.</p>
-            
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Me</button>
-        </div>
-        
-            <!-- Contact Modal -->
-            <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Contact Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <ul>
-                      <li><i class="bi bi-telephone-fill"></i><strong>Phone:</strong> <span>+91 9810737311</span></li>
-                      <li><i class="bi bi-envelope-fill"></i><strong>Email:</strong> <span>sinhapk359@gmail.com</span></li>
-                      <li><i class="bi bi-geo-alt-fill"></i><strong>Location:</strong> <span>Noida, India</span></li>
-                     
-                      
-                    </ul>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="modal-body">
+            <ul class="mb-0">
+              <li><i class="bi bi-telephone-fill"></i><strong>Phone:</strong> <span>+91 9810737311</span></li>
+              <li><i class="bi bi-envelope-fill"></i><strong>Email:</strong> <span>sinhapk359@gmail.com</span></li>
+              <li><i class="bi bi-geo-alt-fill"></i><strong>Location:</strong> <span>Noida, India</span></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
     
 <!-- /About Section -->
 
@@ -296,53 +303,111 @@
         </div>
       </section>
       
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const counters = document.querySelectorAll(".purecounter");
+      
+          // Function to append `+` if not already present
+          const appendPlus = (counter) => {
+            if (!counter.textContent.includes("+")) {
+              counter.textContent = counter.textContent + "+";
+            }
+          };
+      
+          // Observe each counter for changes
+          counters.forEach((counter) => {
+            const observer = new MutationObserver(() => appendPlus(counter));
+            observer.observe(counter, { childList: true, subtree: true });
+          });
+      
+          // Initial call after page load
+          counters.forEach(appendPlus);
+        });
+      </script>
+      
+      
 
       <!-- /Stats Section -->
-
-      <!-- Skills Section -->
-      <section id="skills" class="skills section light-background">
+      <section id="work-experience-section" class="work-experience-section section">
+        <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Skills</h2>
-            <h3>
-                Focus area of Expertise, developed through decades of experience in Energy sector management, consultancy, and leadership.
-            </h3>
+          <h2>Work Experience</h2>
+          <p>
+            Offering a range of consulting and training services focused on performance improvement, strategic management, and technical expertise in the power sector.
+          </p>
         </div>
-    
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row skills-content">
-                <!-- Left Column (First 3 Skills) -->
-                <div class="col-lg-6">
-                    <div class="skill-item">
-                        <span class="skill"><i class="bi bi-bar-chart-line"></i><span>Strategic Management</span></span>
-                    </div>
-    
-                    <div class="skill-item">
-                        <span class="skill"><i class="bi bi-bar-chart"></i><span>Gap Analysis & Performance Improvement</span></span>
-                    </div>
-    
-                    <div class="skill-item">
-                        <span class="skill"><i class="bi bi-people-fill"></i><span>Leadership & Team Building</span></span>
-                    </div>
+        <!-- End Section Title -->
+      
+        <div class="container">
+          <div class="row experience-row gy-4">
+            <!-- Experience Card 1 -->
+            <div class="col-lg-6 col-md-6 experience-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="experience-card">
+                <div class="experience-icon">
+                  <i class="bi bi-person-check-fill"></i>
                 </div>
-    
-                <!-- Right Column (Last 3 Skills) -->
-                <div class="col-lg-6">
-                    <div class="skill-item">
-                        <span class="skill"><i class="bi bi-shield-lock"></i><span>Environmental, Health & Safety Management</span></span>
-                    </div>
-    
-                    <div class="skill-item">
-                        <span class="skill"><i class="bi bi-person-lines-fill"></i><span>Stakeholder & Vendor Management</span></span>
-                    </div>
-    
-                    <div class="skill-item">
-                        <span class="skill"><i class="bi bi-person-badge"></i><span>Training & Development</span></span>
-                    </div>
-                </div>
+                <h4 class="experience-title">Independent Consultant / Advisor</h4>
+                <p class="experience-description">
+                  Expertise in strategic management and performance improvements in the power sector, including projects with Vedanta Power, JP Power, and Hiranmaya Energy.
+                </p>
+              </div>
             </div>
+      
+            <!-- Experience Card 2 -->
+            <div class="col-lg-6 col-md-6 experience-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="experience-card">
+                <div class="experience-icon">
+                  <i class="bi bi-bank"></i>
+                </div>
+                <h4 class="experience-title">Executive Director</h4>
+                <p class="experience-description">
+                  Led corporate initiatives in environment management, safety, sustainability, and government relations at NTPC.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Experience Card 3 -->
+            <div class="col-lg-6 col-md-6 experience-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="experience-card">
+                <div class="experience-icon">
+                  <i class="bi bi-house-door"></i>
+                </div>
+                <h4 class="experience-title">Whole Time Director</h4>
+                <p class="experience-description">
+                  Directed P&L, revenue growth, and project execution for power plants (up to 660 MW), leading plant upgrades and performance enhancements of cumulative value of more than 1000 Cr.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Experience Card 4 -->
+            <div class="col-lg-6 col-md-6 experience-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="experience-card">
+                <div class="experience-icon">
+                  <i class="bi bi-lightbulb-fill"></i>
+                </div>
+                <h4 class="experience-title">CEO</h4>
+                <p class="experience-description">
+                  Oversaw 640 MW power plant operations, business growth, stakeholder relations, and managed credit ratings improvement at KBUNL (JV of NTPC & BSPCL).
+                </p>
+              </div>
+            </div>
+      
+            <!-- Experience Card 5 -->
+            <div class="col-lg-6 col-md-6 experience-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="experience-card">
+                <div class="experience-icon">
+                  <i class="bi bi-gear-fill"></i>
+                </div>
+                <h4 class="experience-title">Leadership Roles in O&M</h4>
+                <p class="experience-description">
+                  Led turbine overhauls (210 & 500 MW), major commissioning & maintenance activities, and presented papers on steam turbine O&M at FICCI and national symposia.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-    
+      </section>
+      
       
 
       <!-- End Section Title -->
@@ -756,6 +821,7 @@
               <div class="companies-carousel-item"><img src="assets/img/rel2.png" alt="Reliance Energy"></div>
               <div class="companies-carousel-item"><img src="assets/img/jindal2.png" alt="Jindal Power"></div>
               <div class="companies-carousel-item"><img src="assets/img/tata2.png" alt="TATA Power"></div>
+              
               <!-- Repeat logos for seamless scrolling -->
               <div class="companies-carousel-item"><img src="assets/img/ntpc2-.png" alt="NTPC Lara STPP"></div>
               <div class="companies-carousel-item"><img src="assets/img/vedanta.png" alt="Vedanta"></div>

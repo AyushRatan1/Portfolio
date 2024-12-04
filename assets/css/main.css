@@ -545,40 +545,91 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  width: 100%;
-  min-height: 100vh;
+/* Hero Section */
+/* Hero Section */
+/* Hero Section */
+.hero-section {
   position: relative;
-  padding: 80px 0;
+  width: 100%;
+  height: 100vh; /* Full screen */
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+/* Carousel Container */
+.hero-carousel-container {
+  display: flex;
+  overflow: hidden;
+  position: absolute; /* Ensure it covers the section */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  z-index: 1; /* Behind the text */
 }
 
-.hero:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+/* Carousel Images */
+.hero-carousel-image {
+  flex-shrink: 0;
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  object-fit: cover; /* Ensures image scales without distortion */
+  animation: hero-carousel-scroll 40s linear infinite; /* Slow animation */
+  filter: brightness(50%); /* Makes the images darker */
 }
 
-.hero .container {
-  position: relative;
-  z-index: 3;
-  color: #fff;
+/* Infinite Scrolling Animation */
+@keyframes hero-carousel-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-400%); /* Number of images - 1 * 100% */
+  }
+}
+
+/* Hero Text Container */
+.hero-text-container {
+  position: relative; /* Positioned above carousel */
+  z-index: 2; /* Ensure it's above images */
+  color: #eaeaea;
   text-align: center;
 }
+
+.hero-title {
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+}
+
+
+
+/* Unique Animation Names */
+.hero-carousel-container::after {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 500%; /* Number of images * 100% */
+  background-image:url('assets/img/IMG.png'), 
+  url('assets/img/5.jpg'),
+                    url('assets/img/2.jpg'),
+                    url('assets/img/3.jpg'),
+                    url('assets/img/4.jpg'),
+                    url('assets/img/1.jpg');
+  background-size: cover;
+  animation: hero-carousel-scroll 20s linear infinite;
+}
+
+
+
 
 /* Title & Subtitle Styling */
 .hero-title {
@@ -644,7 +695,7 @@ section,
 .skills-carousel {
   display: flex;
   gap: 20px;
-  animation: scroll 20s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 @keyframes scroll {
@@ -963,7 +1014,7 @@ section,
   cursor: pointer;
   display: inline-block;
   padding: 0;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   margin: 0 10px;
   line-height: 1;
@@ -988,7 +1039,7 @@ section,
 @media (max-width: 575px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
-    margin: 0 5px;
+    margin: 5 10px;
   }
 }
 
@@ -1765,4 +1816,67 @@ a:link {
 
 .portfolio-content:hover .portfolio-title {
   opacity: 0;
+}
+/* Container */
+.work-experience-section {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+/* Section Title */
+.section-title-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+
+.section-title-container p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Experience Cards */
+.experience-item {
+  margin-bottom: 30px;
+}
+
+.experience-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.experience-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.experience-icon {
+  font-size: rem;
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
+
+.experience-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.experience-description {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .experience-item {
+    margin-bottom: 20px;
+  }
+
+  .experience-card {
+    padding: 15px;
+  }
 }
