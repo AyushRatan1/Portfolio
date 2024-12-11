@@ -561,42 +561,82 @@ section,
 
 /* Carousel Container */
 .hero-carousel-container {
-  display: flex;
-  overflow: hidden;
-  position: absolute; /* Ensure it covers the section */
+  position: absolute; /* Covers the entire section */
   top: 0;
   left: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
+  overflow: hidden;
   z-index: 1; /* Behind the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Carousel Images */
 .hero-carousel-image {
-  flex-shrink: 0;
+  position: absolute; /* Stack images on top of each other */
   width: 100%; /* Full width of the container */
   height: 100%; /* Full height of the container */
   object-fit: cover; /* Ensures image scales without distortion */
-  animation: hero-carousel-scroll 40s linear infinite; /* Slow animation */
+  opacity: 0; /* Initially hide all images */
+  animation: hero-carousel-fade 30s infinite; /* Smooth fade animation */
+  transition: opacity 1.5s ease-in-out; /* Optional: smooth fade transition */
   filter: brightness(50%); /* Makes the images darker */
 }
 
-/* Infinite Scrolling Animation */
-@keyframes hero-carousel-scroll {
+/* Assign each image a different animation delay to stagger the fade */
+.hero-carousel-image:nth-child(1) {
+  animation-delay: 0s;
+}
+.hero-carousel-image:nth-child(2) {
+  animation-delay: 3s;
+}
+.hero-carousel-image:nth-child(3) {
+  animation-delay: 6s;
+}
+.hero-carousel-image:nth-child(4) {
+  animation-delay: 9s;
+}
+.hero-carousel-image:nth-child(5) {
+  animation-delay: 12s;
+}
+.hero-carousel-image:nth-child(6) {
+  animation-delay: 15s;
+}
+
+/* Fade Animation */
+@keyframes hero-carousel-fade {
   0% {
-    transform: translateX(0%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1; /* Image becomes visible */
+  }
+  30% {
+    opacity: 1; /* Image stays visible */
+  }
+  40% {
+    opacity: 0; /* Image starts to fade out */
   }
   100% {
-    transform: translateX(-400%); /* Number of images - 1 * 100% */
+    opacity: 0; /* Fully hidden before restarting */
   }
 }
 
+
 /* Hero Text Container */
 .hero-text-container {
-  position: relative; /* Positioned above carousel */
-  z-index: 2; /* Ensure it's above images */
-  color: #eaeaea;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: #fff;
   text-align: center;
+  background: rgba(0, 0, 0, 0.28);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
 }
 
 .hero-title {
