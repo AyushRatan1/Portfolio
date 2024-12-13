@@ -1620,6 +1620,7 @@ a:link {
 }
 .recent-works {
   padding: 60px 0;
+  background: #ffffff; /* Changed to solid white */
 }
 
 .post-item {
@@ -1859,64 +1860,355 @@ a:link {
 }
 /* Container */
 .work-experience-section {
-  background-color: #fff;
-  padding: 40px 0;
+  background-color: #ffffff;
+  padding: 60px 0;
 }
 
-/* Section Title */
-.section-title-container {
-  text-align: center;
-  margin-bottom: 40px;
+.container {
+  max-width: 1140px;
+
+  padding: 0 15px;
 }
 
-
-
-.section-title-container p {
-  font-size: 1.1rem;
-  color: #555;
+.experience-row {
+  display: flex;
+  flex-wrap: wrap;
+ 
 }
 
-/* Experience Cards */
 .experience-item {
-  margin-bottom: 30px;
+  width: 50%; /* Exactly half width */
+  padding: 12px; /* Create gap between cards */
+  box-sizing: border-box;
 }
 
 .experience-card {
-  background: #fff;
+  background: #ffffff;
   padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.experience-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+/* Gradient border effect */
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #007bff, #00d2ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
 }
 
 .experience-icon {
-  font-size: rem;
-  color: #4a90e2;
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.experience-icon i {
+  font-size: 2rem; /* Slightly smaller icon */
+  background: linear-gradient(45deg, #007bff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
 }
 
 .experience-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Smaller title */
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.experience-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
+  transition: width 0.3s ease;
+}
+
+.experience-description {
+  font-size: 0.95rem; /* Smaller text */
+  line-height: 1.5;
+  color: #636e72;
+  margin: 0;
+}
+
+/* Hover Effects */
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card:hover .experience-icon i {
+  transform: scale(1.1);
+}
+
+.experience-card:hover .experience-title::after {
+  width: 60px;
+}
+
+/* Loading Animation */
+.experience-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger the animation for each card */
+.experience-item:nth-child(1) { animation-delay: 0.1s; }
+.experience-item:nth-child(2) { animation-delay: 0.2s; }
+.experience-item:nth-child(3) { animation-delay: 0.3s; }
+.experience-item:nth-child(4) { animation-delay: 0.4s; }
+.experience-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .experience-row {
+    gap: 20px;
+  }
+  
+  .experience-item {
+    width: calc(50% - 10px); /* Adjust for smaller gap */
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    width: 100%; /* Full width on mobile */
+  }
+  
+  .experience-card {
+    padding: 20px;
+  }
+  
+  .experience-icon i {
+    font-size: 1.75rem;
+  }
+  
+  .experience-title {
+    font-size: 1.2rem;
+  }
+  
+  .experience-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Section Title Enhancement */
+.work-experience-section .section-title {
+  margin-bottom: 50px;
+}
+
+.work-experience-section .section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.work-experience-section .section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
+}
+
+.work-experience-section .section-title p {
+  font-size: 1.1rem;
+  color: #636e72;
+  max-width: 800px;
+
+}
+
+/* Recent Works Section Styles */
+.recent-works {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.recent-works .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px;
+}
+
+.recent-works .col-lg-4 {
+  width: calc(33.333% - 24px);
+  margin: 12px;
+  display: flex;
+}
+
+.recent-works .post-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.recent-works .post-item .post-icon {
+  margin-bottom: 1.5rem;
+}
+
+.recent-works .post-item .post-icon i {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #007bff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.recent-works .post-item h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
   font-weight: 600;
   color: #333;
 }
 
-.experience-description {
+.recent-works .post-item p {
+  flex-grow: 1;
   font-size: 1rem;
-  color: #666;
+  color: #777;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 767px) {
-  .experience-item {
-    margin-bottom: 20px;
+.recent-works .post-item .read-more {
+  margin-top: auto;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.recent-works .post-item .read-more::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.recent-works .post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.recent-works .post-item:hover .post-icon i {
+  transform: scale(1.1);
+}
+
+.recent-works .read-more:hover {
+  color: #0056b3;
+  gap: 12px;
+}
+
+.recent-works .read-more:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.recent-works .read-more:hover i {
+  transform: translateX(5px);
+}
+
+/* Loading Animation */
+.recent-works .post-item {
+  animation: cardAppear 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger the animation for each card */
+.recent-works .col-lg-4:nth-child(1) .post-item { animation-delay: 0.1s; }
+.recent-works .col-lg-4:nth-child(2) .post-item { animation-delay: 0.2s; }
+.recent-works .col-lg-4:nth-child(3) .post-item { animation-delay: 0.3s; }
+.recent-works .col-lg-4:nth-child(4) .post-item { animation-delay: 0.4s; }
+.recent-works .col-lg-4:nth-child(5) .post-item { animation-delay: 0.5s; }
+.recent-works .col-lg-4:nth-child(6) .post-item { animation-delay: 0.6s; }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .recent-works .col-lg-4 {
+    width: calc(50% - 24px);
+  }
+}
+
+@media (max-width: 768px) {
+  .recent-works .col-lg-4 {
+    width: 100%;
+    margin: 12px 0;
+  }
+  
+  .recent-works .post-item {
+    min-height: 320px;
+    padding: 25px;
+  }
+  
+  .recent-works .post-item h4 {
+    font-size: 1.15rem;
   }
 
-  .experience-card {
-    padding: 15px;
+  .recent-works .post-item p {
+    font-size: 0.9rem;
   }
 }
