@@ -69,14 +69,14 @@ body {
 }
 
 a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: 0.3s;
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
+  text-decoration: none !important;
+  color: #007bff;
 }
 
 h1,
