@@ -6,8 +6,8 @@
  * For more info and help: https://bootstrapmade.com/php-email-form/
  */
 
-// Replace this email address with Dr. Prabhat Kumar Sinha's real receiving email address
-$receiving_email_address = 'sinhapk359@gmail.com';
+// Replace with test email address
+$receiving_email_address = 'ayushratan082@gmail.com';
 
 // Check if the PHP Email Form library exists
 if (file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php')) {
@@ -21,25 +21,19 @@ $contact->ajax = true;
 
 // Set the recipient email address and other details
 $contact->to = $receiving_email_address;
-$contact->from_name = htmlspecialchars(strip_tags($_POST['name']));
-$contact->from_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-$contact->subject = htmlspecialchars(strip_tags($_POST['subject']));
+$contact->from_name = $_POST['name'];
+$contact->from_email = $_POST['email'];
+$contact->subject = $_POST['subject'];
 
-// Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-/*
-$contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-);
-*/
+// Build HTML message
+$contact->message = "<html><body>";
+$contact->add_message($_POST['name'], 'From');
+$contact->add_message($_POST['email'], 'Email');
+$contact->add_message($_POST['subject'], 'Subject');
+$contact->add_message($_POST['message'], 'Message', 10);
+$contact->message .= "</body></html>";
 
-// Add messages with sanitization for security
-$contact->add_message($contact->from_name, 'From');
-$contact->add_message($contact->from_email, 'Email');
-$contact->add_message(htmlspecialchars(strip_tags($_POST['message'])), 'Message', 10);
-
-// Send the email and output the result
+// Send and return result
+header('Content-Type: application/json');
 echo $contact->send();
 ?>

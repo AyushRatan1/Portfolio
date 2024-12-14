@@ -226,5 +226,52 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Contact Form
+   */
+  document.querySelector('.php-email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let form = this;
+    let submitBtn = form.querySelector('button[type="submit"]');
+    let loadingEl = form.querySelector('.loading');
+    let errorMsgEl = form.querySelector('.error-message');
+    let sentMsgEl = form.querySelector('.sent-message');
+    
+    // Reset states
+    loadingEl.style.display = 'block';
+    errorMsgEl.style.display = 'none';
+    sentMsgEl.style.display = 'none';
+    submitBtn.disabled = true;
+
+    let formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      loadingEl.style.display = 'none';
+      if (data.ok) {
+        sentMsgEl.style.display = 'block';
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Form submission failed!');
+      }
+    })
+    .catch(error => {
+      loadingEl.style.display = 'none';
+      errorMsgEl.innerHTML = error.message;
+      errorMsgEl.style.display = 'block';
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+    });
+  });
+
 })();
 
