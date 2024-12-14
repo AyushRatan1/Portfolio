@@ -21,12 +21,12 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #ffffff;
+  --default-color: #272829;
+  --heading-color: #050d18;
+  --accent-color: #149ddd;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -42,7 +42,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f4fafd;
+  --background-color: #ffffff;
   --surface-color: #ffffff;
 }
 
@@ -506,7 +506,7 @@ h6 {
 section,
 .section {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #ffffff;
   padding: 60px 0;
   overflow: clip;
 }
@@ -515,31 +515,47 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
-  position: relative;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 2.5rem;
   font-weight: 700;
+  color: #2d3436;
   margin-bottom: 20px;
-  padding-bottom: 20px;
   position: relative;
+  padding-bottom: 20px;
+  display: inline-block;
 }
 
-.section-title h2:after {
-  content: "";
+.section-title h2::after {
+  content: '';
   position: absolute;
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  left: 0;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
 }
 
 .section-title p {
-  margin-bottom: 0;
+  font-size: 1.1rem;
+  color: #636e72;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  
+  .section-title p {
+    font-size: 1rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1137,154 +1153,333 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services .service-item {
-  position: relative;
+.services {
+  padding: 80px 0;
+  background: #ffffff;
 }
 
-.services .service-item .icon {
-  background: var(--accent-color);
+.services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Service Grid */
+.services .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.services .col-lg-4 {
+  flex: 0 0 calc(33.333% - 30px);
+  max-width: calc(33.333% - 30px);
+  padding: 0;
+}
+
+/* Service Items */
+.service-item {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 35px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  height: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #007bff, #00d2ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover::before {
+  opacity: 1;
+}
+
+/* Icon Styles */
+.service-item .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background: rgba(0, 123, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  transition: 0.5s;
-  border: 1px solid var(--accent-color);
-  margin-right: 20px;
+  margin-bottom: 25px;
+  transition: all 0.4s ease;
 }
 
-.services .service-item .icon i {
-  color: var(--contrast-color);
-  font-size: 24px;
-  line-height: 0;
+.service-item .icon i {
+  font-size: 32px;
+  color: #007bff;
+  transition: all 0.4s ease;
 }
 
-.services .service-item:hover .icon {
-  background: var(--surface-color);
+.service-item:hover .icon {
+  background: linear-gradient(45deg, #007bff, #00d2ff);
 }
 
-.services .service-item:hover .icon i {
-  color: var(--accent-color);
+.service-item:hover .icon i {
+  color: #ffffff;
 }
 
-.services .service-item .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
+/* Content Styles */
+.service-item .content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.services .service-item .title a {
-  color: var(--heading-color);
+.service-item .title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 20px;
+  padding-right: 15px;
 }
 
-.services .service-item .title a:hover {
-  color: var(--accent-color);
+.service-item .title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.services .service-item .description {
-  line-height: 24px;
-  font-size: 14px;
+.service-item .title a:hover {
+  color: #007bff;
+}
+
+.service-item .description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #636e72;
+  margin: 0;
+  padding-right: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .services .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .services .container {
+    padding: 0 25px;
+  }
+
+  .services .col-lg-4 {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  .service-item {
+    padding: 30px 25px;
+    min-height: 330px;
+  }
+
+  .service-item .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-item .icon i {
+    font-size: 28px;
+  }
+
+  .service-item .title {
+    font-size: 20px;
+  }
+
+  .service-item .description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services .container {
+    padding: 0 20px;
+  }
+  
+  .services .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .service-item {
+    padding: 25px 20px;
+    min-height: 300px;
+  }
 }
 
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
+.testimonials {
+  padding: 80px 0;
+  background: #ffffff;
 }
 
-.testimonials .testimonial-item {
-  box-sizing: content-box;
+/* Section Title */
+.testimonials .section-title {
   text-align: center;
-  min-height: 320px;
+  margin-bottom: 60px;
 }
 
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: 0 auto;
+.testimonials .section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 20px;
+  display: inline-block;
 }
 
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
+.testimonials .section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
 }
 
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 0;
+/* Testimonial Items */
+.testimonial-item {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  height: auto;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
 }
 
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 40%);
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Quote Icons */
+.testimonial-item .quote-icon-left,
+.testimonial-item .quote-icon-right {
   font-size: 26px;
-  line-height: 0;
+  color: #007bff;
+  opacity: 0.15;
+  transition: all 0.3s ease;
 }
 
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
+.testimonial-item:hover .quote-icon-left,
+.testimonial-item:hover .quote-icon-right {
+  opacity: 0.3;
 }
 
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
+.testimonial-item .quote-icon-left {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.testimonial-item .quote-icon-right {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
   transform: scale(-1, -1);
 }
 
-.testimonials .testimonial-item p {
+/* Testimonial Content */
+.testimonial-item p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #636e72;
   font-style: italic;
-  margin: 0 15px 15px 15px;
-  padding: 20px;
-  background-color: var(--surface-color);
-  position: relative;
-  margin-bottom: 35px;
-  border-radius: 6px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  flex-grow: 1;
+  overflow: visible;
+  display: block;
 }
 
-.testimonials .testimonial-item p::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 20px solid var(--surface-color);
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  position: absolute;
-  bottom: -20px;
-  left: calc(50% - 20px);
+/* Profile Section */
+.testimonial-item .profile-section {
+  margin-top: 30px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-.testimonials .swiper-wrapper {
+.testimonial-item .testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Swiper Adjustments */
+.testimonials .swiper-slide {
   height: auto;
 }
 
-.testimonials .swiper-pagination {
-  margin-top: 40px;
-  position: relative;
+.testimonials .swiper-wrapper {
+  align-items: stretch;
 }
 
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: var(--background-color);
-  opacity: 1;
-  border: 1px solid var(--accent-color);
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .testimonial-item {
+    padding: 30px;
+    margin: 15px;
+    min-height: 400px;
+  }
+
+  .testimonial-item p {
+    font-size: 1rem;
+  }
 }
 
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-a:link {
-  text-decoration: none;
+@media (max-width: 768px) {
+  .testimonials .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .testimonial-item {
+    padding: 25px;
+    margin: 10px;
+    min-height: 380px;
+  }
+
+  .testimonial-item .testimonial-img {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1932,6 +2127,7 @@ a:link {
 /* Section Title Enhancement */
 .work-experience-section .section-title {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .work-experience-section .section-title h2 {
@@ -1940,14 +2136,16 @@ a:link {
   position: relative;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .work-experience-section .section-title h2::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
   height: 3px;
   background: linear-gradient(90deg, #007bff, #00d2ff);
 }
@@ -1955,8 +2153,8 @@ a:link {
 .work-experience-section .section-title p {
   font-size: 1.1rem;
   color: #636e72;
-  max-width: 800px;
-
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Recent Works Section Styles */
