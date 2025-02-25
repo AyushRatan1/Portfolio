@@ -273,5 +273,33 @@
     });
   });
 
+  // Initialize Swiper for institutes
+  new Swiper('.institutes-carousel', {
+    slidesPerView: 'auto',
+    spaceBetween: 15,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+        centeredSlides: false,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+        centeredSlides: false,
+      },
+    },
+  });
+
 })();
 

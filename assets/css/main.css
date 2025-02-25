@@ -1879,85 +1879,80 @@ section,
   padding: 80px 0;
 }
 
-.section-title h2 {
-  font-size: 36px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #333;
-  margin-bottom: 20px;
+/* Update section title styles */
+.work-experience .section-title {
+  margin-bottom: 40px;
 }
 
-.companies-carousel-container {
-  overflow: hidden;
+.work-experience .section-title h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 0;
   position: relative;
-  width: 100%;
+  display: inline-block;
 }
 
-.companies-carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.work-experience .section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
 }
 
-.companies-carousel {
-  display: flex;
-  gap: 40px;
-  animation: scroll-companies 25s linear infinite;
+/* Adjust company list spacing */
+.companies-list {
+  margin-top: 20px;
 }
 
-.companies-carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 8px;
-
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.company-column li {
+  height: 70px; /* Slightly larger height */
+  padding: 15px 25px; /* More horizontal padding */
+  margin-bottom: 18px; /* Slightly more space between items */
 }
 
-.companies-carousel-item img {
-  max-height: 120px;
-  max-width: 150px;
-  transition: transform 0.4s ease, filter 0.3s ease;
-  object-fit: contain;
+.company-column li .logo-container {
+  width: 120px; /* Larger logo container */
+  min-width: 120px;
 }
 
-.companies-carousel-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+.company-column li img {
+  height: 45px; /* Slightly larger logos */
+  max-width: 120px;
 }
 
-.companies-carousel-item img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+.company-column li .company-name {
+  font-size: 1.15rem; /* Slightly larger font */
+  font-weight: 500;
 }
 
-@keyframes scroll-companies {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Responsive Adjustments */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .companies-carousel-item img {
-    max-height: 100px;
-    max-width: 120px;
+  .work-experience .section-title h2 {
+    font-size: 2.2rem;
   }
-}
-
-@media (max-width: 480px) {
-  .companies-carousel-item img {
-    max-height: 80px;
-    max-width: 100px;
+  
+  .company-column li {
+    height: 60px;
+    padding: 12px 20px;
   }
-
-  .companies-carousel {
-    gap: 20px;
+  
+  .company-column li .logo-container {
+    width: 90px;
+    min-width: 90px;
+  }
+  
+  .company-column li img {
+    height: 35px;
+    max-width: 90px;
+  }
+  
+  .company-column li .company-name {
+    font-size: 1.05rem;
   }
 }
 
@@ -2517,5 +2512,192 @@ section,
 @keyframes animate-loading {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Update these styles for the companies list */
+.companies-list {
+  margin-top: 30px;
+}
+
+.company-column {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.company-column li {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px; /* Reduced vertical padding */
+  margin-bottom: 15px; /* Reduced margin between items */
+  background: #ffffffa8;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2d3436;
+  height: 64px; /* Fixed height for all items */
+  border: 0.3px solid #00000097;
+}
+
+.company-column li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo container to ensure consistent width */
+.company-column li .logo-container {
+  width: 100px; /* Fixed width for logo area */
+  min-width: 100px; /* Ensure minimum width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.company-column li img {
+  height: 40px;
+  width: auto;
+  max-width: 100px; /* Maximum width for logos */
+  object-fit: contain;
+}
+
+/* Company name styles */
+.company-column li .company-name {
+  flex: 1;
+  white-space: nowrap; /* Keep name in one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .company-column li {
+    font-size: 1rem;
+    padding: 10px 15px;
+    height: 54px; /* Slightly smaller height on mobile */
+  }
+  
+  .company-column li .logo-container {
+    width: 80px;
+    min-width: 80px;
+    margin-right: 15px;
+  }
+  
+  .company-column li img {
+    height: 30px;
+    max-width: 80px;
+  }
+}
+
+/* Training Institutes Section */
+.training-institutes {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.training-institutes .section-title {
+  margin-bottom: 40px;
+}
+
+.training-institutes .section-title h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.training-institutes .section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
+}
+
+
+
+.institute-card {
+  background: #ffffffb8;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #000;
+  
+
+  min-height: 150px; /* Reduced height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+  
+  
+  
+ 
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+
+}
+
+.institute-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.institute-logo {
+  margin-bottom: 15px;
+}
+
+.institute-logo i {
+  font-size: 2rem;
+  color: #007bff;
+  background: linear-gradient(45deg, #007bff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.institute-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 5px;
+}
+
+.institute-card p {
+  font-size: 0.9rem;
+  color: #636e72;
+  margin: 0;
+}
+
+/* Update Swiper settings for better display */
+.institutes-carousel .swiper-pagination {
+  position: relative;
+  margin-top: 30px;
+}
+
+.institutes-carousel .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #007bff;
+  opacity: 0.5;
+}
+
+.institutes-carousel .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
+}
+
+@media (max-width: 768px) {
+  .training-institutes .section-title h2 {
+    font-size: 2.2rem;
+  }
+  
+  
 }
 
