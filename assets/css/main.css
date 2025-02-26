@@ -569,7 +569,7 @@ section,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(rgba(4, 11, 20, 0.65), rgba(4, 11, 20, 0.65));
+  background: linear-gradient(rgba(4, 11, 20, 0.5), rgba(4, 11, 20, 0.9));
 }
 
 /* Image Carousel Styles */
@@ -645,13 +645,14 @@ section,
 }
 
 .hero-title {
-  font-size: 3rem !important;
+  font-size: 2.8rem !important;
   font-weight: 600 !important;
   margin-bottom: 20px;
-  background: linear-gradient(45deg, #ffffff, #e0e0e0);
+  background: linear-gradient(45deg, #c7baba, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-top: 15%;
 }
 
 .hero-subtitle {
@@ -661,9 +662,10 @@ section,
 }
 
 .typed {
-  color: #007bff;
+  color: #007bff9a;
   font-weight: 500;
 }
+
 
 /* Skills Carousel Styles */
 .skills-carousel-container {
@@ -736,6 +738,7 @@ section,
 @media (max-width: 992px) {
   .hero-title {
     font-size: 2.8rem !important;
+    
   }
   
   .hero-subtitle {
@@ -750,7 +753,8 @@ section,
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.2rem !important;
+    font-size: 2.5rem !important;
+    padding-top: 55%;
   }
   
   .hero-subtitle {
@@ -818,7 +822,7 @@ section,
 }
 
 .about .content h2 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #2d3436;
   margin-bottom: 25px;
@@ -984,7 +988,7 @@ section,
 
 .stats .stats-item .purecounter {
   color: var(--heading-color);
-  font-size: 48px;
+  font-size: 35px;
   line-height: 40px;
   display: block;
   font-weight: 700;
@@ -1008,7 +1012,7 @@ section,
 }
 
 .skills .section-title h2 {
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 700;
   color: var(--heading-color);
   text-transform: uppercase;
@@ -2701,3 +2705,7 @@ section,
   
 }
 
+.section-title h2{
+  font-size: 2.1rem !important;
+  color: rgb(49, 49, 49) !important
+}
