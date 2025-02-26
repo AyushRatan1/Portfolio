@@ -569,7 +569,7 @@ section,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(rgba(4, 11, 20, 0.5), rgba(4, 11, 20, 0.9));
+  background: linear-gradient(rgba(4, 11, 20, 0.5), rgba(4, 11, 20, 1.5));
 }
 
 /* Image Carousel Styles */
@@ -754,7 +754,7 @@ section,
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem !important;
-    padding-top: 55%;
+    padding-top: 79%;
   }
   
   .hero-subtitle {
