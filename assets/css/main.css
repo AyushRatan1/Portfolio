@@ -681,7 +681,7 @@ section,
   display: flex;
   gap: 30px;
   padding: 0 20px;
-  animation: scrollSkills 30s linear infinite;
+  animation: scrollSkills 6s linear infinite;
 }
 
 @keyframes scrollSkills {
